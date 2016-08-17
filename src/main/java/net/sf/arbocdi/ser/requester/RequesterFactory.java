@@ -10,7 +10,6 @@ import javax.enterprise.context.Dependent;
 import javax.enterprise.inject.Default;
 import javax.enterprise.inject.Produces;
 import lombok.Data;
-import net.sf.arbocdi.ser.requester.RequesterI.RequesterType;
 
 /**
  *
@@ -25,7 +24,7 @@ public class RequesterFactory {
     @Produces
     @Default
     @Dependent
-    public RequesterI createRequester(@RequesterI.RequesterQualifier(type = RequesterType.APACHE)ApacheRequester ar) {
+    public Requester createRequester(@RequesterQualifier(type = RequesterType.APACHE)ApacheRequester ar) {
         switch (requesterType) {
             case APACHE:
                 return ar;

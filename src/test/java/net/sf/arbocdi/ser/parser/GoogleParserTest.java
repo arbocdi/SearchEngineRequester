@@ -3,8 +3,6 @@ package net.sf.arbocdi.ser.parser;
 import java.io.File;
 import junit.framework.Assert;
 import net.sf.arbocdi.ser.WeldHelper;
-import net.sf.arbocdi.ser.parser.ParserI.ParserQualifier;
-import net.sf.arbocdi.ser.parser.ParserI.ParserResult;
 import org.apache.commons.io.FileUtils;
 import org.junit.After;
 import org.junit.AfterClass;

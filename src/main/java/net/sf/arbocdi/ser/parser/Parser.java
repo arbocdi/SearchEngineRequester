@@ -3,16 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.sf.arbocdi.ser.searcher;
-
-import net.sf.arbocdi.ser.parser.ParserResult;
+package net.sf.arbocdi.ser.parser;
 
 /**
  *
  * @author arbocdi
  */
-public interface Searcher {
+public interface Parser {
 
-    ParserResult search(String searchText) throws Exception;
-
+    ParserResult parse(String str) throws Exception;
 }

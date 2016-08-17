@@ -5,14 +5,11 @@
  */
 package net.sf.arbocdi.ser.searcher;
 
-import net.sf.arbocdi.ser.parser.ParserResult;
-
 /**
  *
  * @author arbocdi
  */
-public interface Searcher {
+public enum SearcherType {
 
-    ParserResult search(String searchText) throws Exception;
-
+    GOOGLE;
 }

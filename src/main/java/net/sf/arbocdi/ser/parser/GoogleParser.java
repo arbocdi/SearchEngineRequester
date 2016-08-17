@@ -5,11 +5,8 @@
  */
 package net.sf.arbocdi.ser.parser;
 
-import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import net.sf.arbocdi.ser.Utils;
-import net.sf.arbocdi.ser.parser.ParserI.ParserQualifier;
-import net.sf.arbocdi.ser.parser.ParserI.ParserType;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -19,7 +16,7 @@ import org.jsoup.nodes.Element;
  * @author arbocdi
  */
 @ParserQualifier(type = ParserType.GOOGLE)
-public class GoogleParser implements ParserI {
+public class GoogleParser implements Parser {
 
     @Override
     public ParserResult parse(String str) throws Exception {

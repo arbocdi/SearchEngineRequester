@@ -5,13 +5,10 @@
  */
 package net.sf.arbocdi.ser.requester;
 
-import javax.annotation.PostConstruct;
 import net.sf.arbocdi.ser.resources.HttpClientWrapper;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import lombok.Data;
-import net.sf.arbocdi.ser.requester.RequesterI.RequesterQualifier;
-import net.sf.arbocdi.ser.requester.RequesterI.RequesterType;
 import org.apache.http.client.methods.HttpGet;
 
 /**
@@ -21,7 +18,7 @@ import org.apache.http.client.methods.HttpGet;
 @ApplicationScoped
 @Data
 @RequesterQualifier(type = RequesterType.APACHE)
-public class ApacheRequester implements RequesterI {
+public class ApacheRequester implements Requester {
 
     @Inject
     private HttpClientWrapper httpClientWrapper;

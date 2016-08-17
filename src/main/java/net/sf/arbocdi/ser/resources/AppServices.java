@@ -7,10 +7,9 @@ package net.sf.arbocdi.ser.resources;
 
 import ch.qos.logback.classic.LoggerContext;
 import ch.qos.logback.classic.joran.JoranConfigurator;
-import ch.qos.logback.core.joran.spi.JoranException;
+import java.lang.annotation.Annotation;
 import lombok.extern.slf4j.Slf4j;
 import net.sf.arbocdi.ser.Utils;
-import net.sf.arbocdi.ser.requester.ApacheRequester;
 import org.jboss.weld.environment.se.Weld;
 import org.jboss.weld.environment.se.WeldContainer;
 import org.slf4j.LoggerFactory;
@@ -69,13 +68,14 @@ public class AppServices implements AutoCloseable {
         AppServices appServices = new AppServices();
         try {
             appServices.start();
-            
+
         } finally {
             Utils.close(appServices);
         }
     }
-    public <T> T getCDIBean(Class<T> beanClass){
-        return this.container.select(beanClass).get();
+
+    public <T> T getCDIBean(Class<T> beanClass, Annotation... qualifiers) {
+        return this.container.select(beanClass, qualifiers).get();
     }
 
 }

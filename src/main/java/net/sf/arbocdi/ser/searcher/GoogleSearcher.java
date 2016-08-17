@@ -9,16 +9,13 @@ import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.net.URISyntaxException;
 import java.net.URLEncoder;
-import javax.enterprise.context.Dependent;
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
-import net.sf.arbocdi.ser.parser.ParserI;
-import net.sf.arbocdi.ser.parser.ParserI.ParserQualifier;
-import net.sf.arbocdi.ser.parser.ParserI.ParserResult;
-import net.sf.arbocdi.ser.parser.ParserI.ParserType;
-import net.sf.arbocdi.ser.requester.RequesterI;
-import net.sf.arbocdi.ser.requester.RequesterI.RequesterQualifier;
-import net.sf.arbocdi.ser.requester.RequesterI.RequesterType;
+import net.sf.arbocdi.ser.parser.Parser;
+import net.sf.arbocdi.ser.parser.ParserQualifier;
+import net.sf.arbocdi.ser.parser.ParserResult;
+import net.sf.arbocdi.ser.parser.ParserType;
+import net.sf.arbocdi.ser.requester.Requester;
 
 import org.apache.commons.io.FileUtils;
 
@@ -26,15 +23,15 @@ import org.apache.commons.io.FileUtils;
  *
  * @author arbocdi
  */
-@Dependent
+@SearcherQualifier(type = SearcherType.GOOGLE)
 public class GoogleSearcher implements Searcher {
 
     @Inject
     @Default
-    private RequesterI requester;
+    private Requester requester;
     @Inject
     @ParserQualifier(type = ParserType.GOOGLE)
-    private ParserI pasrer;
+    private Parser pasrer;
 
     @Override
     public ParserResult search(String searchText) throws Exception {

@@ -12,13 +12,14 @@ import java.io.OutputStream;
 import java.net.URLEncoder;
 import net.sf.arbocdi.ser.Utils;
 import net.sf.arbocdi.ser.WeldHelper;
-import net.sf.arbocdi.ser.requester.RequesterI.RequesterQualifier;
+import net.sf.arbocdi.ser.requester.RequesterQualifier;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Ignore;
 
 /**
  *
@@ -49,6 +50,7 @@ public class ApacheRequesterTest {
     }
 
     @Test
+    @Ignore
     public void testMakeGoogleRequest() throws Exception {
         String response = this.requester.makeRequest("https://www.google.com/search?ie=utf-8&oe=utf-8&q="+URLEncoder.encode("Привет", "UTF-8"));
         OutputStream out = null;
